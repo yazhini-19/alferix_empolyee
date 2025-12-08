@@ -6,9 +6,11 @@ interface StatCardProps {
   change?: string;
   trend?: "up" | "down" | "neutral";
   icon?: React.ReactNode;
+  iconClassName?: string;
+  iconContainerClassName?: string;
 }
 
-export default function StatCard({ title, value, change, trend, icon }: StatCardProps) {
+export default function StatCard({ title, value, change, trend, icon, iconClassName, iconContainerClassName }: StatCardProps) {
   const trendColors = {
     up: "text-green-600 dark:text-green-400",
     down: "text-red-600 dark:text-red-400",
@@ -30,7 +32,7 @@ export default function StatCard({ title, value, change, trend, icon }: StatCard
           )}
         </div>
         {icon && (
-          <div className="flex-shrink-0 text-blue-600 dark:text-blue-400">
+          <div className={`flex-shrink-0 ${iconClassName || "text-blue-600 dark:text-blue-400"} ${iconContainerClassName || ""}`}>
             {icon}
           </div>
         )}
