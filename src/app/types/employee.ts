@@ -8,8 +8,10 @@ export interface Employee {
   hireDate: string;
   status: "active" | "inactive" | "on-leave";
   avatar?: string;
-  salary?: number;
   location?: string;
+  technicalSkills?: string[];
+  availability?: "Available" | "Half Capacity" | "Full Capacity";
+  availableFrom?: string;
 }
 
 export interface EmployeeFormData {
@@ -20,7 +22,8 @@ export interface EmployeeFormData {
   position: string;
   hireDate: string;
   status: "active" | "inactive" | "on-leave";
-  salary?: number;
   location?: string;
+  technicalSkills?: string[];
+  availability?: "Available" | "Half Capacity" | "Full Capacity";
+  availableFrom?: string;
 }
-
